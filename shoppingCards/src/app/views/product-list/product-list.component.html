@@ -1,13 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col" *ngFor = "let item of productList">
+        <div class="col" *ngFor="let item of productList">
             <div class="card" style="width: 18rem;">
                 <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{item.pName}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{item.additionalInfo}}</h6>
                     <p class="card-text">{{item.pDesc}}</p>
-                    <p class="card-text">{{item.additionalInfo}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <app-modal []></app-modal>
+                    <a routerLink="/{{item.pNameURL}}/{{item.id}}" class="card-link">{{item.price}}</a>
+                    <a href="#" class="card-link">? | != ; !</a>
                 </div>
             </div>
         </div>

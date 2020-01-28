@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces/iproduct';
+import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,5 +36,12 @@ export class DataService {
 
   getProducts() {
     return this.products;
+  }
+
+  getProduct(sku: string): Observable<IProduct> {
+    return of(
+    this.products.find(
+      x => x.id === sku
+    ));
   }
 }
