@@ -13,6 +13,8 @@ export class ProductListComponent implements OnInit {
   constructor(private dService: DataService) { }
 
   ngOnInit() {
+    // attach our productList to the array in our Data Service
+    this.productList = this.dService.getProducts();
   }
 
 }
